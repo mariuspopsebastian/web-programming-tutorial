@@ -18,10 +18,12 @@ function showList(shoppingList){
 
 }
 
-var shoppingList = [
-    {nume: 'Paine', cantitate: 1},
-    {nume: 'Suc', cantitate: 3},
-    {nume: 'Mere', cantitate: 10}
-];
+$.ajax('js/mocks/shopping-list.json', {
+    success: function(shoppingList){
+        console.info(shoppingList);
+        showList(shoppingList);
+    }
+});
+console.debug('after ajax');
 
-showList(shoppingList);
+
